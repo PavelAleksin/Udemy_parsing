@@ -6,11 +6,11 @@ soup = BeautifulSoup(resp.content)
 print(f'Статус запроса:{resp.status_code}')
 len(soup.find_all())
 
-#1 вариант очистка от символа ваалюты и перевод во Float
+#1 вариант очистка от символа валюты и перевод во Float
 def clean_price(price):
     return float(''.join([char for char in price if char.isdigit() or char == '.']))
 
-#2 вариант(cost) очистка от символа ваалюты и перевод во Float
+#2 вариант(cost) очистка от символа валюты и перевод во Float
 def clean_price2(price):
     return float(re.sub('[^0-9.]','',price))
 
